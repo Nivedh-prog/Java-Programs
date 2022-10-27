@@ -1,0 +1,87 @@
+import java.util.Scanner;
+class student
+{
+String name;
+int roll_no;
+Scanner sc = new Scanner(System.in);
+void accept()
+{
+System.out.println("Enter the name :");
+name = sc.nextLine();
+System.out.println("Enter the roll no :");
+roll_no = sc.nextInt();
+}
+
+void display()
+{
+System.out.println("Name is "+name);
+System.out.println("Roll no. is "+roll_no);
+}
+}
+class test extends student
+{
+int ia1,ia2;
+Scanner sc = new Scanner(System.in);
+void accept_t()
+{
+System.out.println("Enter the ut marks 1 :");
+ia1 = sc.nextInt();
+System.out.println("Enter the ut marks 2 :");
+ia2 = sc.nextInt();
+}
+void display_t()
+{
+System.out.println("Marks sem1 = "+ia1);
+System.out.println("Marks sem2 = "+ia2);
+}
+}
+class result extends test
+{
+int ia;
+double per;
+Scanner sc = new Scanner(System.in);
+
+void cal()
+{
+ia = (ia1+ia2)/2;
+per = (ia*100/20);
+}
+
+void display_per()
+{
+System.out.println("Average marks of sem exam = "+ia);
+System.out.println("Percentage is "+per+"%");
+}
+}
+class expt9
+{
+public static void main(String args[])
+{
+result r = new result();
+r.accept();
+r.display();
+r.accept_t();
+r.display_t();
+r.cal();
+r.display_per();
+}
+}
+
+
+/*
+Output 
+Enter the name :
+vaishnav
+Enter the roll no :
+32
+Name is vaishnav
+Roll no. is 32
+Enter the ut marks 1 :
+10
+Enter the ut marks 2 :
+15
+Marks ut1 = 10
+Marks ut2 = 15
+Average maerks of ia = 12
+Percentage is 60.0%
+*/
